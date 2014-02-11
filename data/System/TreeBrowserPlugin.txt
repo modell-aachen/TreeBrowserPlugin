@@ -1,5 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" date="1235133702" format="1.1" reprev="1.2" version="1.2"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278781" format="1.1" version="1"}%
 ---+!! Tree Browser Plugin
 
 Renders a bulleted or numbered list as a collapsible/expandable tree of nodes.
@@ -8,7 +7,7 @@ Renders a bulleted or numbered list as a collapsible/expandable tree of nodes.
 
 ---++ Acknowledgment
 
-This plugin leverages the [[http://www.destroydrop.com/javascripts/tree/][dTree]] !JavaScript tree menu by [[mailto:drop@destroydrop.com][Geir Landrö]] as well as code borrowed from Foswiki:Extensions.RenderListPlugin.
+This plugin leverages the [[http://www.destroydrop.com/javascripts/tree/][dTree]] !JavaScript tree menu by [[mailto:drop@destroydrop.com][Geir Landr&ouml;]] as well as code borrowed from Foswiki:Extensions.RenderListPlugin.
 
 ---++ Syntax Rules
 
@@ -42,7 +41,7 @@ Rendering themes can be defined by =&lt;name&gt;_THEME= Plugin settings
       * =Set &lt; _name_ &gt;_THEME = tree=
    * Format of the *icon* render type:
       * =Set &lt; _name_ &gt;_THEME = icon, [&lt; _root icon image_ &gt;], [&lt; _icon image_ &gt;], [&lt; _folder icon image_ &gt;], [&lt; _open folder icon image_ &gt;]=
-      * The _root icon image_ is shown at the root of the tree, the _icon image_ is shown at every leaf node, the _folder icon image_ is shown at every collapsed internal node, and the _open folder icon image_ is shown at every expanded internal node. The icon images point to files attached to wiki topics and are referenced in the standard manner. If no path is given, the images are taken from TWiki.TWikiDocGraphics.
+      * The _root icon image_ is shown at the root of the tree, the _icon image_ is shown at every leaf node, the _folder icon image_ is shown at every collapsed internal node, and the _open folder icon image_ is shown at every expanded internal node. The icon images point to files attached to wiki topics and are referenced in the standard manner. If no path is given, the images are taken from %SYSTEMWEB%.DocumentGraphics.
       * If an icon image is omitted, the following defaults are chosen: %ATTACHURL%/empty.gif, %ATTACHURL%/page.gif, %ATTACHURL%/folder.gif, %ATTACHURL%/folderopen.gif
 
 If !JavaScript is not enabled, the list is rendered as usual, and the =%<nop>TREEBROWSER% tag is omitted.
@@ -138,10 +137,10 @@ left.config.shared=true;
 left.config.useStatusText=false;
 left.config.useSelection=false;
 left.config.folderLinks=false;
-left.add(0,-1,"<a href=\"/view/TWiki/WebHome\" class=\"twikiCurrentWebHomeLink twikiLink\">TWiki Web Home</a>");
-left.add(1,0,"<a href=\"/view/TWiki/WebChanges\" class=\"twikiLink\">Changes</a> ",'','','','%ATTACHURLPATH%/page.gif');
-left.add(2,0,"<a href=\"/view/TWiki/WebIndex\" class=\"twikiLink\">Index</a>",'','','','%ATTACHURLPATH%/page.gif');
-left.add(3,0,"<a href=\"/view/TWiki/WebSearch\" class=\"twikiLink\">Search</a>",'','','','%ATTACHURLPATH%/page.gif');
+left.add(0,-1,"<a href=\"/view/%SYSTEMWEB%/WebHome\" class=\"twikiCurrentWebHomeLink twikiLink\">%SYSTEMWEB% Web Home</a>");
+left.add(1,0,"<a href=\"/view/%SYSTEMWEB%/WebChanges\" class=\"twikiLink\">Changes</a> ",'','','','%ATTACHURLPATH%/page.gif');
+left.add(2,0,"<a href=\"/view/%SYSTEMWEB%/WebIndex\" class=\"twikiLink\">Index</a>",'','','','%ATTACHURLPATH%/page.gif');
+left.add(3,0,"<a href=\"/view/%SYSTEMWEB%/WebSearch\" class=\"twikiLink\">Search</a>",'','','','%ATTACHURLPATH%/page.gif');
 left.add(4,0,"this is a very very very long text",'','','','%ATTACHURLPATH%/page.gif');
 left.add(5,0,"Folder",'','','','%ATTACHURLPATH%/folder.gif','%ATTACHURLPATH%/folderopen.gif');
 left.add(6,5,"Leaf1",'','','','%ATTACHURLPATH%/page.gif');
@@ -210,9 +209,9 @@ To add _"collapse/expand all nodes"_ functionalities do something like:
 menudemo = new dTree('menudemo');
 menudemo.config.style='dmenu';
 menudemo.config.inOrder=true;
-menudemo.config.iconPath='/pub/TWiki/TreeBrowserPlugin/';
+menudemo.config.iconPath='/pub/%SYSTEMWEB%/TreeBrowserPlugin/';
 menudemo.updateIconPath();
-menudemo.icon.root='/pub/TWiki/TreeBrowserPlugin/home.gif';
+menudemo.icon.root='/pub/%SYSTEMWEB%/TreeBrowserPlugin/home.gif';
 menudemo.config.useIcons=false;
 menudemo.config.shared=true;
 menudemo.config.noIndent=true;
@@ -224,17 +223,17 @@ menudemo.config.folderLinks=false;
 menudemo.config.noRoot=true;
 menudemo.config.autoToggle=true;
 menudemo.add(0,-1,"");
-menudemo.add(1,0,"Vegetables",'','','','/pub/TWiki/TreeBrowserPlugin/folder.gif','/pub/TWiki/TreeBrowserPlugin/folderopen.gif');
-menudemo.add(2,1,"Carot",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-menudemo.add(3,1,"Leek",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-menudemo.add(4,1,"Tomato",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-menudemo.add(5,1,"Potato",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-menudemo.add(6,0,"Fruits",'','','','/pub/TWiki/TreeBrowserPlugin/folder.gif','/pub/TWiki/TreeBrowserPlugin/folderopen.gif');
-menudemo.add(7,6,"Banana",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-menudemo.add(8,6,"Grape fruit",'','','','/pub/TWiki/TreeBrowserPlugin/folder.gif','/pub/TWiki/TreeBrowserPlugin/folderopen.gif');
-menudemo.add(9,8,"Pink",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-menudemo.add(10,8,"Yellow ",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-menudemo.add(11,6,"Peach",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
+menudemo.add(1,0,"Vegetables",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folder.gif','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folderopen.gif');
+menudemo.add(2,1,"Carot",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+menudemo.add(3,1,"Leek",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+menudemo.add(4,1,"Tomato",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+menudemo.add(5,1,"Potato",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+menudemo.add(6,0,"Fruits",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folder.gif','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folderopen.gif');
+menudemo.add(7,6,"Banana",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+menudemo.add(8,6,"Grape fruit",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folder.gif','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folderopen.gif');
+menudemo.add(9,8,"Pink",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+menudemo.add(10,8,"Yellow ",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+menudemo.add(11,6,"Peach",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
 document.write(menudemo);
 //-->
 </script>
@@ -287,9 +286,9 @@ document.write(menudemo);
 popupdemo = new dTree('popupdemo');
 popupdemo.config.style='dmenu';
 popupdemo.config.inOrder=true;
-popupdemo.config.iconPath='/pub/TWiki/TreeBrowserPlugin/';
+popupdemo.config.iconPath='/pub/%SYSTEMWEB%/TreeBrowserPlugin/';
 popupdemo.updateIconPath();
-popupdemo.icon.root='/pub/TWiki/TreeBrowserPlugin/home.gif';
+popupdemo.icon.root='/pub/%SYSTEMWEB%/TreeBrowserPlugin/home.gif';
 popupdemo.config.useIcons=false;
 popupdemo.config.shared=true;
 popupdemo.config.noIndent=true;
@@ -308,17 +307,17 @@ popupdemo.config.closePopupDelay=1000;
 popupdemo.config.popupOffset={x:0 , y:0};
 %IF{"$ SKIN='pattern' or $ SKIN='twikiorg,pattern'" then="popupdemo.config.firstPopupOffset={x:-163 , y:0};" else="popupdemo.config.firstPopupOffset={x:0 , y:0};"}%
 popupdemo.add(0,-1,"");
-popupdemo.add(1,0,"Vegetables",'','','','/pub/TWiki/TreeBrowserPlugin/folder.gif','/pub/TWiki/TreeBrowserPlugin/folderopen.gif');
-popupdemo.add(2,1,"Carot",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-popupdemo.add(3,1,"Leek",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-popupdemo.add(4,1,"Tomato",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-popupdemo.add(5,1,"Potato",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-popupdemo.add(6,0,"Fruits",'','','','/pub/TWiki/TreeBrowserPlugin/folder.gif','/pub/TWiki/TreeBrowserPlugin/folderopen.gif');
-popupdemo.add(7,6,"Banana",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-popupdemo.add(8,6,"Grape fruit",'','','','/pub/TWiki/TreeBrowserPlugin/folder.gif','/pub/TWiki/TreeBrowserPlugin/folderopen.gif');
-popupdemo.add(9,8,"Pink",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-popupdemo.add(10,8,"Yellow ",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
-popupdemo.add(11,6,"Peach",'','','','/pub/TWiki/TreeBrowserPlugin/page.gif');
+popupdemo.add(1,0,"Vegetables",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folder.gif','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folderopen.gif');
+popupdemo.add(2,1,"Carot",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+popupdemo.add(3,1,"Leek",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+popupdemo.add(4,1,"Tomato",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+popupdemo.add(5,1,"Potato",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+popupdemo.add(6,0,"Fruits",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folder.gif','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folderopen.gif');
+popupdemo.add(7,6,"Banana",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+popupdemo.add(8,6,"Grape fruit",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folder.gif','/pub/%SYSTEMWEB%/TreeBrowserPlugin/folderopen.gif');
+popupdemo.add(9,8,"Pink",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+popupdemo.add(10,8,"Yellow ",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
+popupdemo.add(11,6,"Peach",'','','','/pub/%SYSTEMWEB%/TreeBrowserPlugin/page.gif');
 document.write(popupdemo);
 //-->
 </script>
@@ -446,24 +445,24 @@ a plugin setting write ==%<nop>&lt;plugin&gt;_&lt;setting&gt;%==, i.e. ==%<nop>T
      | ==pub/%SYSTEMWEB%/%TOPIC%/plusbottom.gif== | part of dtree |
      | ==pub/%SYSTEMWEB%/%TOPIC%/question.gif== | part of dtree |
      | ==pub/%SYSTEMWEB%/%TOPIC%/trash.gif== | part of dtree |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/doc.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/email.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/file.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/group.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/home.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/image.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/pdf.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/person.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/persons.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/ppt.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/see.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/sound.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/trend.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/virtualhome.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/virtualperson.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/virtualpersons.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/xls.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
-     | ==pub/%SYSTEMWEB%/%TOPIC%/zip.gif== | icons from [[TWiki:Plugins.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/doc.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/email.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/file.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/group.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/home.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/image.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/pdf.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/person.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/persons.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/ppt.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/see.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/sound.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/trend.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/virtualhome.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/virtualperson.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/virtualpersons.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/xls.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
+     | ==pub/%SYSTEMWEB%/%TOPIC%/zip.gif== | icons from [[Foswiki:Extensions.RenderListPlugin][RenderListPlugin]] |
 
 ---++ Known issues
 
@@ -474,85 +473,79 @@ a plugin setting write ==%<nop>&lt;plugin&gt;_&lt;setting&gt;%==, i.e. ==%<nop>T
 
 ---++ Planned Enhancements
 
-See TWiki:Plugins.TreeBrowserPluginDev.
+See Foswiki:Extensions.TreeBrowserPluginDev.
    
 ---++ Plugin Info
 
-|  Author(s): | TWiki:Main.ThomasWeigert & TWiki:Main.StephaneLenclud |
+|  Author(s): | Foswiki:Main.ThomasWeigert & Foswiki:Main.StephaneLenclud |
 |  Version: | %$VERSION% |
 |  Release: | %$RELEASE% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
 |  27 Oct 2010: | (v2.1) - Minor rebranding from 'TWiki'. By [[Foswiki:Main.DanDascalescu][Dan Dascalescu]]. |
 |  10 Nov 2009: | (v2.0) - Fixed version numbering for configure. By [[Foswiki:Main.IngoKappler][Ingo Kappler]]. |
-|  20 Feb 2009: | (v1.9) - Foswiki port. By [[Foswiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  29 Mar 2007: | (v1.8) - Improved =smenu= CSS and fixing warning.  By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  18 Mar 2007: | (v1.7) - Improved =smenu= CSS, resolved _highlighting gap issue_ . Now closing sub-menu when highlighting leaf.  By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  18 Mar 2007: | (v1.6) - Sub-menus now working in IE with =smenu= style. Closing sub-menu when going back one level with mouse cursor.  By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  18 Mar 2007: | (v1.5) - Adding =useopacity= parameter. Adding =smenu.css=. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  16 Mar 2007: | (v1.4) - Adding =firstpopupoffset= allowing workaround for PatternSkin problem. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  14 Mar 2007: | (v1.3) - Adding =popup=, =closepopudelay= and =popupoffset= parameters. Implemented pop-up menu. Improved =dmenu.css=. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  11 Mar 2007: | (v1.2) - Adding =nodeactions= parameter. Improved =dmenu.css=. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  10 Mar 2007: | (v1.1) - Adding =autotoggle= parameter. It's useful for menu style. Improved =dmenu.css=. Added =dtreeRoot= CSS class. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  09 Mar 2007: | (v1.0) - Improved CSS with variable class name allowing for multiple tree with different style on the same topic. Now bullet =icon:= supports full URL or URI. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  09 Mar 2007: | (v0.9) - Adding =style= parameter. Improved CSS. Fixes extra '\n' in dot pm. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  07 Mar 2007: | (v0.8) - Adding =noroot= and =warn= parameters. Now using =preRenderingHandler= instead of the deprecated =startRenderingHandler= . =%<nop>TREEBROWSER%= are hidden if there is no tree to render. Fixes TOC icons problem with TWiki:Plugins.NatSkin. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  01 Oct 2006: | (v0.7) - Adding =useplusminus= , =noindent= and =nocss= parameters. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]]. |
-|  17 Sep 2006: | (v0.6) - Adding =closesamelevel= and =uselines= functionalities, fix rendering issues with Firefox and pattern skin, fix warnings in apache error logs. By [[TWiki:Main.StephaneLenclud][Stéphane Lenclud]] |
+|  20 Feb 2009: | (v1.9) - Foswiki port. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  29 Mar 2007: | (v1.8) - Improved =smenu= CSS and fixing warning.  By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  18 Mar 2007: | (v1.7) - Improved =smenu= CSS, resolved _highlighting gap issue_ . Now closing sub-menu when highlighting leaf.  By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  18 Mar 2007: | (v1.6) - Sub-menus now working in IE with =smenu= style. Closing sub-menu when going back one level with mouse cursor.  By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  18 Mar 2007: | (v1.5) - Adding =useopacity= parameter. Adding =smenu.css=. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  16 Mar 2007: | (v1.4) - Adding =firstpopupoffset= allowing workaround for PatternSkin problem. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  14 Mar 2007: | (v1.3) - Adding =popup=, =closepopudelay= and =popupoffset= parameters. Implemented pop-up menu. Improved =dmenu.css=. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  11 Mar 2007: | (v1.2) - Adding =nodeactions= parameter. Improved =dmenu.css=. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  10 Mar 2007: | (v1.1) - Adding =autotoggle= parameter. It's useful for menu style. Improved =dmenu.css=. Added =dtreeRoot= CSS class. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  09 Mar 2007: | (v1.0) - Improved CSS with variable class name allowing for multiple tree with different style on the same topic. Now bullet =icon:= supports full URL or URI. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  09 Mar 2007: | (v0.9) - Adding =style= parameter. Improved CSS. Fixes extra '\n' in dot pm. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  07 Mar 2007: | (v0.8) - Adding =noroot= and =warn= parameters. Now using =preRenderingHandler= instead of the deprecated =startRenderingHandler= . =%<nop>TREEBROWSER%= are hidden if there is no tree to render. Fixes TOC icons problem with Foswiki:Extensions.NatSkin. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  01 Oct 2006: | (v0.7) - Adding =useplusminus= , =noindent= and =nocss= parameters. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]]. |
+|  17 Sep 2006: | (v0.6) - Adding =closesamelevel= and =uselines= functionalities, fix rendering issues with Firefox and pattern skin, fix warnings in apache error logs. By [[Foswiki:Main.StephaneLenclud][Stephane Lenclud]] |
 |  12 Apr 2006: | (v0.5) - Minor update for TWiki:Codev.TWikiRelease04x00  |
 |  16 Sep 2005: | (v0.4) - Fix bug in =openAll= and =openTo= functions  |
-|  06 Sep 2005: | (v0.3) - Adopt the rendering themes from TWiki:Plugins.RenderListPlugin |
+|  06 Sep 2005: | (v0.3) - Adopt the rendering themes from Foswiki:Extensions.RenderListPlugin |
 |  05 Sep 2005: | (v0.2) - Support sharing of tree state across topics. If !JavaScript is not enabled, render the list in standard fashion. Correct user input error containig a line that is too deeply indented. |
 |  04 Sep 2005: | (v0.1) - Initial version |
-|  TWiki Dependency: | $TWiki::Plugins::VERSION 1.024 |
-|  CPAN Dependencies: | none |
-|  Other Dependencies: | none |
-|  Perl Version: | 5.005, 5.8.7 |
-|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
-|  Plugin Home: | http://TWiki.org/cgi-bin/view/Plugins/%TOPIC% |
-|  Feedback: | http://TWiki.org/cgi-bin/view/Plugins/%TOPIC%Dev |
+|  Home: | Foswiki:Extensions.%TOPIC% |
+|  Support: | Foswiki:Support.%TOPIC% |
+|  Development: | Foswiki:Development.%TOPIC% |
 
-__Related Topics:__ TWiki:Plugins.RenderListPlugin, TWiki:Plugins.TreePlugin
-
-%META:FILEATTACHMENT{name="dtree.js" attachment="dtree.js" attr="" comment="Saved by install script" date="1235132936" size="30563" stream="GLOB(0x92286c4)" tmpFilename="/tmp/V4uNUH57Ls" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="dtree.css" attachment="dtree.css" attr="" comment="Saved by install script" date="1235132936" size="988" stream="GLOB(0x920815c)" tmpFilename="/tmp/l1uBHNrOxH" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="dmenu.css" attachment="dmenu.css" attr="" comment="Saved by install script" date="1235132936" size="2831" stream="GLOB(0x923aa80)" tmpFilename="/tmp/qdJg6guZu5" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="smenu.css" attachment="smenu.css" attr="" comment="Saved by install script" date="1235132936" size="3289" stream="GLOB(0x92284c0)" tmpFilename="/tmp/YML6TcRGUA" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="empty.gif" attachment="empty.gif" attr="" comment="Saved by install script" date="1235132936" size="62" stream="GLOB(0x92ab28c)" tmpFilename="/tmp/49vQPRyULE" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="email.gif" attachment="email.gif" attr="" comment="Saved by install script" date="1235132936" size="183" stream="GLOB(0x92ab328)" tmpFilename="/tmp/pbMIapf7Yr" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="xls.gif" attachment="xls.gif" attr="" comment="Saved by install script" date="1235132936" size="918" stream="GLOB(0x92081d4)" tmpFilename="/tmp/rgVzMSVnVa" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="joinbottom.gif" attachment="joinbottom.gif" attr="" comment="Saved by install script" date="1235132936" size="66" stream="GLOB(0x92ab3a0)" tmpFilename="/tmp/JTbkDmirl9" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="question.gif" attachment="question.gif" attr="" comment="Saved by install script" date="1235132936" size="1044" stream="GLOB(0x92ab190)" tmpFilename="/tmp/6cONKyztDZ" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="file.gif" attachment="file.gif" attr="" comment="Saved by install script" date="1235132936" size="151" stream="GLOB(0x92ab10c)" tmpFilename="/tmp/amCmcQullo" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="musicfolder.gif" attachment="musicfolder.gif" attr="" comment="Saved by install script" date="1235132936" size="633" stream="GLOB(0x92ab1cc)" tmpFilename="/tmp/lNvOkwcXm6" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="person.gif" attachment="person.gif" attr="" comment="Saved by install script" date="1235132936" size="153" stream="GLOB(0x92ab5a4)" tmpFilename="/tmp/lqzSEjh91X" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="doc.gif" attachment="doc.gif" attr="" comment="Saved by install script" date="1235132936" size="922" stream="GLOB(0x92ab640)" tmpFilename="/tmp/4XvkJsxKPG" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="virtualpersons.gif" attachment="virtualpersons.gif" attr="" comment="Saved by install script" date="1235132936" size="160" stream="GLOB(0x9228538)" tmpFilename="/tmp/wUrKiQChAV" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="imgfolder.gif" attachment="imgfolder.gif" attr="" comment="Saved by install script" date="1235132936" size="622" stream="GLOB(0x92aaef0)" tmpFilename="/tmp/l1HAuTaUJJ" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="folderopen.gif" attachment="folderopen.gif" attr="" comment="Saved by install script" date="1235132936" size="376" stream="GLOB(0x92ab3ac)" tmpFilename="/tmp/nLyYzzIrVg" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="cd.gif" attachment="cd.gif" attr="" comment="Saved by install script" date="1235132936" size="239" stream="GLOB(0x92ab2c8)" tmpFilename="/tmp/r2M4ULMsj0" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="virtualperson.gif" attachment="virtualperson.gif" attr="" comment="Saved by install script" date="1235132936" size="149" stream="GLOB(0x92aaf8c)" tmpFilename="/tmp/cv75CyiLGE" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="group.gif" attachment="group.gif" attr="" comment="Saved by install script" date="1235132936" size="162" stream="GLOB(0x9228958)" tmpFilename="/tmp/BGsvRyoJDO" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="minus.gif" attachment="minus.gif" attr="" comment="Saved by install script" date="1235132936" size="86" stream="GLOB(0x92ab4b4)" tmpFilename="/tmp/dTm3GgW2Nw" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="ppt.gif" attachment="ppt.gif" attr="" comment="Saved by install script" date="1235132936" size="921" stream="GLOB(0x9208090)" tmpFilename="/tmp/UPLaHKvBLp" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="join.gif" attachment="join.gif" attr="" comment="Saved by install script" date="1235132936" size="69" stream="GLOB(0x92ab5bc)" tmpFilename="/tmp/VUhk3wSOjD" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="page.gif" attachment="page.gif" attr="" comment="Saved by install script" date="1235132936" size="582" stream="GLOB(0x92ab61c)" tmpFilename="/tmp/AsvScASY4T" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="nolines_minus.gif" attachment="nolines_minus.gif" attr="" comment="Saved by install script" date="1235132936" size="861" stream="GLOB(0x92ab6c4)" tmpFilename="/tmp/yRIGsyWvY2" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="plusbottom.gif" attachment="plusbottom.gif" attr="" comment="Saved by install script" date="1235132936" size="88" stream="GLOB(0x92ab388)" tmpFilename="/tmp/v22vDTuzkj" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="pdf.gif" attachment="pdf.gif" attr="" comment="Saved by install script" date="1235132936" size="938" stream="GLOB(0x92081c8)" tmpFilename="/tmp/Or8eNGZk42" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="minusbottom.gif" attachment="minusbottom.gif" attr="" comment="Saved by install script" date="1235132936" size="85" stream="GLOB(0x9227ea8)" tmpFilename="/tmp/G2sKpPG2mE" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="nolines_plus.gif" attachment="nolines_plus.gif" attr="" comment="Saved by install script" date="1235132936" size="870" stream="GLOB(0x92ab2d4)" tmpFilename="/tmp/wxGIMOc9jV" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="persons.gif" attachment="persons.gif" attr="" comment="Saved by install script" date="1235132936" size="164" stream="GLOB(0x92ab2b0)" tmpFilename="/tmp/aIqVxpTIAx" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="sound.gif" attachment="sound.gif" attr="" comment="Saved by install script" date="1235132936" size="166" stream="GLOB(0x92282e0)" tmpFilename="/tmp/UXqXTs4Oje" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="home.gif" attachment="home.gif" attr="" comment="Saved by install script" date="1235132936" size="172" stream="GLOB(0x9208174)" tmpFilename="/tmp/exeI1XMx7e" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="folder.gif" attachment="folder.gif" attr="" comment="Saved by install script" date="1235132936" size="372" stream="GLOB(0x92ab3d0)" tmpFilename="/tmp/WKar9kCILB" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="tree.jpg" attachment="tree.jpg" attr="" comment="Saved by install script" date="1235132936" size="8115" stream="GLOB(0x92ab568)" tmpFilename="/tmp/Webuj0Q60L" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="zip.gif" attachment="zip.gif" attr="" comment="Saved by install script" date="1235132936" size="940" stream="GLOB(0x92ab160)" tmpFilename="/tmp/NIMtxTngnP" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="image.gif" attachment="image.gif" attr="" comment="Saved by install script" date="1235132936" size="943" stream="GLOB(0x92ab46c)" tmpFilename="/tmp/zgpbPDsPTq" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="base.gif" attachment="base.gif" attr="" comment="Saved by install script" date="1235132936" size="1040" stream="GLOB(0x92ab544)" tmpFilename="/tmp/Z13MpRgOxS" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="see.gif" attachment="see.gif" attr="" comment="Saved by install script" date="1235132936" size="81" stream="GLOB(0x9227f2c)" tmpFilename="/tmp/HvRYlVWhLG" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="trend.gif" attachment="trend.gif" attr="" comment="Saved by install script" date="1235132936" size="149" stream="GLOB(0x9207f28)" tmpFilename="/tmp/9G9Ock3hof" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="trash.gif" attachment="trash.gif" attr="" comment="Saved by install script" date="1235132936" size="1051" stream="GLOB(0x9228718)" tmpFilename="/tmp/VFTEpbNTZ7" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="line.gif" attachment="line.gif" attr="" comment="Saved by install script" date="1235132936" size="66" stream="GLOB(0x9207fc4)" tmpFilename="/tmp/qVUO4dH6Pt" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="virtualhome.gif" attachment="virtualhome.gif" attr="" comment="Saved by install script" date="1235132936" size="162" stream="GLOB(0x92ab5ec)" tmpFilename="/tmp/Veo4JCYpjc" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="plus.gif" attachment="plus.gif" attr="" comment="Saved by install script" date="1235132936" size="89" stream="GLOB(0x92ab1a8)" tmpFilename="/tmp/uEAaZKgyR0" user="BaseUserMapping_333" version="1"}%
-%META:FILEATTACHMENT{name="globe.gif" attachment="globe.gif" attr="" comment="Saved by install script" date="1235132936" size="1095" stream="GLOB(0x92ab514)" tmpFilename="/tmp/tIRk8VIZvv" user="BaseUserMapping_333" version="1"}%
+%META:FILEATTACHMENT{name="dtree.js" attachment="dtree.js" attr="" comment="Saved by install script" date="1235132936" size="30563" stream="GLOB(0x92286c4)" tmpFilename="/tmp/V4uNUH57Ls" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="dtree.css" attachment="dtree.css" attr="" comment="Saved by install script" date="1235132936" size="988" stream="GLOB(0x920815c)" tmpFilename="/tmp/l1uBHNrOxH" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="dmenu.css" attachment="dmenu.css" attr="" comment="Saved by install script" date="1235132936" size="2831" stream="GLOB(0x923aa80)" tmpFilename="/tmp/qdJg6guZu5" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="smenu.css" attachment="smenu.css" attr="" comment="Saved by install script" date="1235132936" size="3289" stream="GLOB(0x92284c0)" tmpFilename="/tmp/YML6TcRGUA" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="empty.gif" attachment="empty.gif" attr="" comment="Saved by install script" date="1235132936" size="62" stream="GLOB(0x92ab28c)" tmpFilename="/tmp/49vQPRyULE" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="email.gif" attachment="email.gif" attr="" comment="Saved by install script" date="1235132936" size="183" stream="GLOB(0x92ab328)" tmpFilename="/tmp/pbMIapf7Yr" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="xls.gif" attachment="xls.gif" attr="" comment="Saved by install script" date="1235132936" size="918" stream="GLOB(0x92081d4)" tmpFilename="/tmp/rgVzMSVnVa" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="joinbottom.gif" attachment="joinbottom.gif" attr="" comment="Saved by install script" date="1235132936" size="66" stream="GLOB(0x92ab3a0)" tmpFilename="/tmp/JTbkDmirl9" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="question.gif" attachment="question.gif" attr="" comment="Saved by install script" date="1235132936" size="1044" stream="GLOB(0x92ab190)" tmpFilename="/tmp/6cONKyztDZ" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="file.gif" attachment="file.gif" attr="" comment="Saved by install script" date="1235132936" size="151" stream="GLOB(0x92ab10c)" tmpFilename="/tmp/amCmcQullo" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="musicfolder.gif" attachment="musicfolder.gif" attr="" comment="Saved by install script" date="1235132936" size="633" stream="GLOB(0x92ab1cc)" tmpFilename="/tmp/lNvOkwcXm6" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="person.gif" attachment="person.gif" attr="" comment="Saved by install script" date="1235132936" size="153" stream="GLOB(0x92ab5a4)" tmpFilename="/tmp/lqzSEjh91X" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="doc.gif" attachment="doc.gif" attr="" comment="Saved by install script" date="1235132936" size="922" stream="GLOB(0x92ab640)" tmpFilename="/tmp/4XvkJsxKPG" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="virtualpersons.gif" attachment="virtualpersons.gif" attr="" comment="Saved by install script" date="1235132936" size="160" stream="GLOB(0x9228538)" tmpFilename="/tmp/wUrKiQChAV" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="imgfolder.gif" attachment="imgfolder.gif" attr="" comment="Saved by install script" date="1235132936" size="622" stream="GLOB(0x92aaef0)" tmpFilename="/tmp/l1HAuTaUJJ" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="folderopen.gif" attachment="folderopen.gif" attr="" comment="Saved by install script" date="1235132936" size="376" stream="GLOB(0x92ab3ac)" tmpFilename="/tmp/nLyYzzIrVg" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="cd.gif" attachment="cd.gif" attr="" comment="Saved by install script" date="1235132936" size="239" stream="GLOB(0x92ab2c8)" tmpFilename="/tmp/r2M4ULMsj0" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="virtualperson.gif" attachment="virtualperson.gif" attr="" comment="Saved by install script" date="1235132936" size="149" stream="GLOB(0x92aaf8c)" tmpFilename="/tmp/cv75CyiLGE" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="group.gif" attachment="group.gif" attr="" comment="Saved by install script" date="1235132936" size="162" stream="GLOB(0x9228958)" tmpFilename="/tmp/BGsvRyoJDO" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="minus.gif" attachment="minus.gif" attr="" comment="Saved by install script" date="1235132936" size="86" stream="GLOB(0x92ab4b4)" tmpFilename="/tmp/dTm3GgW2Nw" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="ppt.gif" attachment="ppt.gif" attr="" comment="Saved by install script" date="1235132936" size="921" stream="GLOB(0x9208090)" tmpFilename="/tmp/UPLaHKvBLp" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="join.gif" attachment="join.gif" attr="" comment="Saved by install script" date="1235132936" size="69" stream="GLOB(0x92ab5bc)" tmpFilename="/tmp/VUhk3wSOjD" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="page.gif" attachment="page.gif" attr="" comment="Saved by install script" date="1235132936" size="582" stream="GLOB(0x92ab61c)" tmpFilename="/tmp/AsvScASY4T" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="nolines_minus.gif" attachment="nolines_minus.gif" attr="" comment="Saved by install script" date="1235132936" size="861" stream="GLOB(0x92ab6c4)" tmpFilename="/tmp/yRIGsyWvY2" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="plusbottom.gif" attachment="plusbottom.gif" attr="" comment="Saved by install script" date="1235132936" size="88" stream="GLOB(0x92ab388)" tmpFilename="/tmp/v22vDTuzkj" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="pdf.gif" attachment="pdf.gif" attr="" comment="Saved by install script" date="1235132936" size="938" stream="GLOB(0x92081c8)" tmpFilename="/tmp/Or8eNGZk42" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="minusbottom.gif" attachment="minusbottom.gif" attr="" comment="Saved by install script" date="1235132936" size="85" stream="GLOB(0x9227ea8)" tmpFilename="/tmp/G2sKpPG2mE" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="nolines_plus.gif" attachment="nolines_plus.gif" attr="" comment="Saved by install script" date="1235132936" size="870" stream="GLOB(0x92ab2d4)" tmpFilename="/tmp/wxGIMOc9jV" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="persons.gif" attachment="persons.gif" attr="" comment="Saved by install script" date="1235132936" size="164" stream="GLOB(0x92ab2b0)" tmpFilename="/tmp/aIqVxpTIAx" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="sound.gif" attachment="sound.gif" attr="" comment="Saved by install script" date="1235132936" size="166" stream="GLOB(0x92282e0)" tmpFilename="/tmp/UXqXTs4Oje" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="home.gif" attachment="home.gif" attr="" comment="Saved by install script" date="1235132936" size="172" stream="GLOB(0x9208174)" tmpFilename="/tmp/exeI1XMx7e" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="folder.gif" attachment="folder.gif" attr="" comment="Saved by install script" date="1235132936" size="372" stream="GLOB(0x92ab3d0)" tmpFilename="/tmp/WKar9kCILB" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="tree.jpg" attachment="tree.jpg" attr="" comment="Saved by install script" date="1235132936" size="8115" stream="GLOB(0x92ab568)" tmpFilename="/tmp/Webuj0Q60L" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="zip.gif" attachment="zip.gif" attr="" comment="Saved by install script" date="1235132936" size="940" stream="GLOB(0x92ab160)" tmpFilename="/tmp/NIMtxTngnP" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="image.gif" attachment="image.gif" attr="" comment="Saved by install script" date="1235132936" size="943" stream="GLOB(0x92ab46c)" tmpFilename="/tmp/zgpbPDsPTq" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="base.gif" attachment="base.gif" attr="" comment="Saved by install script" date="1235132936" size="1040" stream="GLOB(0x92ab544)" tmpFilename="/tmp/Z13MpRgOxS" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="see.gif" attachment="see.gif" attr="" comment="Saved by install script" date="1235132936" size="81" stream="GLOB(0x9227f2c)" tmpFilename="/tmp/HvRYlVWhLG" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="trend.gif" attachment="trend.gif" attr="" comment="Saved by install script" date="1235132936" size="149" stream="GLOB(0x9207f28)" tmpFilename="/tmp/9G9Ock3hof" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="trash.gif" attachment="trash.gif" attr="" comment="Saved by install script" date="1235132936" size="1051" stream="GLOB(0x9228718)" tmpFilename="/tmp/VFTEpbNTZ7" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="line.gif" attachment="line.gif" attr="" comment="Saved by install script" date="1235132936" size="66" stream="GLOB(0x9207fc4)" tmpFilename="/tmp/qVUO4dH6Pt" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="virtualhome.gif" attachment="virtualhome.gif" attr="" comment="Saved by install script" date="1235132936" size="162" stream="GLOB(0x92ab5ec)" tmpFilename="/tmp/Veo4JCYpjc" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="plus.gif" attachment="plus.gif" attr="" comment="Saved by install script" date="1235132936" size="89" stream="GLOB(0x92ab1a8)" tmpFilename="/tmp/uEAaZKgyR0" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="globe.gif" attachment="globe.gif" attr="" comment="Saved by install script" date="1235132936" size="1095" stream="GLOB(0x92ab514)" tmpFilename="/tmp/tIRk8VIZvv" user="ProjectContributor" version="1"}%

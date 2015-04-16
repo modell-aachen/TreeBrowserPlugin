@@ -1,0 +1,9 @@
+*.swp
+igp_*
+TreeBrowserPlugin.md5
+TreeBrowserPlugin.sha1
+TreeBrowserPlugin.tgz
+TreeBrowserPlugin.txt
+TreeBrowserPlugin.zip
+TreeBrowserPlugin_installer
+TreeBrowserPlugin_installer.pl
